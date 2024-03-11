@@ -1,2 +1,2 @@
-# gleam_prometheus
+# Observatory
 Gleam client library for Prometheus
