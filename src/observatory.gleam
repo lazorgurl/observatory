@@ -43,19 +43,21 @@ pub fn counter_inc_by(
   name: String,
   increment: Float,
 ) -> Observatory {
-  Observatory(
-    registry: dict.update(
-      observatory.registry,
-      name,
-      fn(opt_collector: Option(Collector)) -> Collector {
-        case opt_collector {
-          Some(collector) ->
-            case collector {
-              ACounter(collector) -> ACounter(collector +. increment)
-            }
-          None -> ACounter(increment)
+  Observatory(registry: dict.update(
+    observatory.registry,
+    name,
+    inc_collector_by(increment),
+  ))
+}
+
+fn inc_collector_by(increment: Float) -> fn(Option(Collector)) -> Collector {
+  fn(opt_collector: Option(Collector)) -> Collector {
+    case opt_collector {
+      Some(collector) ->
+        case collector {
+          ACounter(collector) -> ACounter(collector +. increment)
         }
-      },
-    ),
-  )
+      None -> ACounter(increment)
+    }
+  }
 }
