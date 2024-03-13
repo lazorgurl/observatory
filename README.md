@@ -3,7 +3,7 @@
 [![Package Version](https://img.shields.io/hexpm/v/observatory)](https://hex.pm/packages/observatory)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/observatory/)
 
-A Gleam client library for Prometheus with a focus on simplicity. Currently heavily WIP.
+A Gleam client library for [Prometheus](https://prometheus.io) with a focus on simplicity. Currently heavily WIP.
 
 ```sh
 gleam add observatory
