@@ -21,8 +21,11 @@ pub fn main() {
     
     // Some code here...
     
-    observatory.counter_inc("http_status_200")
-    observatory.counter_inc_by("search_total_items_returned", returned_items_count)
+    observatory.counter_inc(http_status_200_metric)
+    observatory.counter_inc_by(
+      search_total_items_returned_metric, 
+      returned_items_count
+    )
 }
 ```
 
