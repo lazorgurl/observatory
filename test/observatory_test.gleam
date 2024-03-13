@@ -8,13 +8,14 @@ pub fn main() {
   gleeunit.main()
 }
 
+const test_counter_metric = "test_counter"
+
 pub fn counter_inc_test() {
-  let key = "test_counter"
   let output =
     observatory.init()
-    |> observatory.counter_init(key)
-    |> observatory.counter_inc(key)
-    |> observatory.counter_inc(key)
+    |> observatory.counter_init(test_counter_metric)
+    |> observatory.counter_inc(test_counter_metric)
+    |> observatory.counter_inc(test_counter_metric)
     |> observatory.collect()
 
   should.be_ok(list.at(output, 0))
@@ -23,11 +24,10 @@ pub fn counter_inc_test() {
 }
 
 pub fn counter_inc_by_test() {
-  let key = "test_counter"
   let output =
     observatory.init()
-    |> observatory.counter_init(key)
-    |> observatory.counter_inc_by(key, 112.19)
+    |> observatory.counter_init(test_counter_metric)
+    |> observatory.counter_inc_by(test_counter_metric, 112.19)
     |> observatory.collect()
 
   should.be_ok(list.at(output, 0))
