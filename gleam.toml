@@ -1,0 +1,12 @@
+name = "observatory"
+version = "0.0.1"
+
+description = "A Gleam client library for Prometheus"
+licences = ["MIT"]
+repository = { type = "github", user = "lazorgurl", repo = "observatory" }
+
+[dependencies]
+gleam_stdlib = "~> 0.34 or ~> 1.0"
+
+[dev-dependencies]
+gleeunit = "~> 1.0"
